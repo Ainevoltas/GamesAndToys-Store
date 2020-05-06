@@ -58,7 +58,6 @@ export class AppComponent {
   };
 
   public deleteClicked(record) {
-    console.log(record)
     const deleteIndex = _.findIndex(this.productData, {id: record.id});
     this.httpService.remove(record).subscribe(
       result => this.productData.splice(deleteIndex, 1)

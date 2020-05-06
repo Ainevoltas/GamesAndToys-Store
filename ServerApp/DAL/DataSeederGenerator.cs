@@ -64,10 +64,25 @@ namespace ServerApp.DAL
                 Price = 10.99m
             });
 
-            //TODO
-            //AbstractProductRepository.AddProduct(context, 01, "Luke", "Skywalker", 12, "Mattel", 99);
-            //AbstractProductRepository.AddProduct(context, 02, "Leia", "Skywalker", 12, "Mattel", 99);
-            //AbstractProductRepository.AddProduct(context, 03, "ObiWan", "Skywalker", 12, "Mattel", 99);
+            context.Add(new Product()
+            {
+                Id = 04,
+                Name = "Lego Starship",
+                Description = "Make your own Starship with legos",
+                AgeRestriction = 8,
+                Company = "Lego",
+                Price = 20.99m
+            });
+
+            context.Add(new Product()
+            {
+                Id = 05,
+                Name = "Barbie developer",
+                Description = "Become a developer!",
+                AgeRestriction = 4,
+                Company = "Mattel",
+                Price = 9.99m
+            });
 
             context.SaveChanges();            
         }

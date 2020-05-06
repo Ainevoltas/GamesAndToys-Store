@@ -18,8 +18,9 @@ export class ProductsListComponent implements OnInit {
   }
 
   public deleteRecord(record) {
-    console.log(record)
-    this.recordDeleted.emit(record);
+    if(confirm("Are you sure you want to delete this product? "+record.name)) {
+      this.recordDeleted.emit(record);
+    }    
   }
     
   public editRecord(record) {
