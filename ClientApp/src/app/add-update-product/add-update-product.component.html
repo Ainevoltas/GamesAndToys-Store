@@ -1,0 +1,27 @@
+<div>
+    <h2 *ngIf="!productInfo || productInfo.id === undefined">Add product</h2>
+    <h2 *ngIf="productInfo && productInfo.id !== undefined">Update product (ID: {{productInfo.id}} )</h2>
+    <form>
+        <div class="form-group">
+            <label for="date-input">Product name:</label>
+            <input required type="text" id="name-input" name="name" [(ngModel)]="productInfo.name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="distance-input">Description:</label>
+            <textarea rows="3" id="description-input" name="description" [(ngModel)]="productInfo.description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="time-input">Minimum Age:</label>
+            <input type="number" id="age-input" name="age" [(ngModel)]="productInfo.ageRestriction" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="time-input">Company:</label>
+            <input type="text" id="age-input" name="company" [(ngModel)]="productInfo.company" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="time-input">Price:</label>
+            <input type="number" id="age-input" name="price" [(ngModel)]="productInfo.price" class="form-control" />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addOrUpdateProductRecord($event);">Save</button>
+    </form>
+</div>

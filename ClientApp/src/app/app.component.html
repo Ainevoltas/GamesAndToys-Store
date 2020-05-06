@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to toys and games!!</h1>
+  <p class="lead">Please feel free to explore this simple angular and net core CRUD app.</p>
+  <hr class="my-4">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-add-update-product (productCreated)="createOrUpdateProduct($event)" [productInfo]="currentProduct">
+      </app-add-update-product>
+    </div>
+    <div class="col-md-9">
+      <app-products-list [productData]='productData' (editClicked)="editClicked($event)" (newClicked)="newClicked()"
+        (recordDeleted)="deleteClicked($event)"></app-products-list>
+    </div>
+  </div>
+</div>
